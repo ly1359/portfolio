@@ -14,7 +14,7 @@ function createStars(){
 }
 
 function addStars(){
-    const numStars = 100;
+    const numStars = 250;
 
     const starsContainer = document.querySelector('.stars');
 
