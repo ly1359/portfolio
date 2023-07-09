@@ -1,6 +1,5 @@
 body{
     margin: 0;
-    overflow: hidden;
 }
 
 ul {
@@ -12,12 +11,9 @@ a {
 }
 
 :root{
-    /* --main-color: #9FD8E7; */
-    --second-color: #FFFFFF;
-    --thirt-color: #D9D9D9; 
     --main-color: #2F0743;
+    --constrate-second-color: #390743da;
     --contraste-color: #FECA7E;
-    --constrate-second-color: #390743f8;
     --neon-color: #81C6E7;
     --blue-color: #022358;
 }
@@ -126,20 +122,27 @@ a {
 
   .information {
     width: 100%;
-    height: 800px;
+    height: 400px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 400px 400px;
+    grid-template-rows: 200px 200px;
     grid-template-areas: 
         "contacts projects"
         "languagens projects";
-
+    justify-items: center;
   }
 
   .contacts {
     grid-area: contacts;
-    /* background-color: #022358; */
+    color: var(--contraste-color);
+    width: 250px;
 
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contacts h3 {
+    margin: 25px 0 0 65px;
   }
 
   .listContacts li {
@@ -148,10 +151,14 @@ a {
 
   .listContacts li div{
     background-color: var(--constrate-second-color);
-    border-radius: 6px;
     width: 200px;
+    height: 20px;
     margin-left: 5px;
     padding-left: 10PX;
+  }
+
+  .listContacts li div a {
+    color: var(--contraste-color);
   }
 
   .languagens {
@@ -159,5 +166,43 @@ a {
   }
 
   .projects {
+    width: 220px;
     grid-area: projects;
+  }
+
+
+  @media(max-width: 412px){
+    body {
+        width: auto;
+        height: auto;
+        max-width: inherit;
+        overflow: hidden;
+    }
+
+
+    .containerfirstPage {
+        display: block;
+        width: auto;
+    }
+
+    .containerfirstPage img{
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .containerWhoAmI {
+        
+    }
+
+    .picture img{
+        width: 250px; 
+        height: 250px;
+    }
+
+    .information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
   }
